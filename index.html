@@ -644,7 +644,12 @@
       const navEl = document.getElementById('nav-' + p);
       if (navEl) navEl.classList.remove('active');
     });
-      function toggleMobile() {
+  }
+    document.getElementById('page-' + id).classList.add('active');
+    const navEl = document.getElementById('nav-' + id);
+    if (navEl) navEl.classList.add('active');
+    window.scrollTo(0, 0);
+  function toggleMobile() {
     document.getElementById('mobile-menu').classList.toggle('open');
   }
 
@@ -656,11 +661,6 @@
       const el = document.getElementById('mob-' + p);
       if (el) el.classList.remove('active');
     });
-  }
-    document.getElementById('page-' + id).classList.add('active');
-    const navEl = document.getElementById('nav-' + id);
-    if (navEl) navEl.classList.add('active');
-    window.scrollTo(0, 0);
   }
 </script>
 
