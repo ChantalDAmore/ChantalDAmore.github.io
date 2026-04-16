@@ -636,32 +636,41 @@
 </footer>
 
 <script>
-  const pages = ['home','about','research','publications','data'];
+  const pages = ['home', 'about', 'research', 'publications', 'data'];
 
   function showPage(id) {
-    pages.forEach(p => {
-      document.getElementById('page-' + p).classList.remove('active');
-      const navEl = document.getElementById('nav-' + p);
+    // hide all pages
+    pages.forEach(function(p) {
+      var pageEl = document.getElementById('page-' + p);
+      if (pageEl) pageEl.style.display = 'none';
+      var navEl = document.getElementById('nav-' + p);
       if (navEl) navEl.classList.remove('active');
     });
-  }
-    document.getElementById('page-' + id).classList.add('active');
-    const navEl = document.getElementById('nav-' + id);
-    if (navEl) navEl.classList.add('active');
+
+    // show the chosen page
+    var target = document.getElementById('page-' + id);
+    if (target) target.style.display = 'block';
+
+    // mark nav link as active
+    var navTarget = document.getElementById('nav-' + id);
+    if (navTarget) navTarget.classList.add('active');
+
+    // close mobile menu and scroll to top
+    closeMobile();
     window.scrollTo(0, 0);
+  }
+
   function toggleMobile() {
     document.getElementById('mobile-menu').classList.toggle('open');
   }
 
   function closeMobile() {
-    document.getElementById('mobile-menu').classList.remove('open');
-    // sync active state in mobile menu
-    const pages = ['about','research','publications','data'];
-    pages.forEach(p => {
-      const el = document.getElementById('mob-' + p);
-      if (el) el.classList.remove('active');
-    });
+    var menu = document.getElementById('mobile-menu');
+    if (menu) menu.classList.remove('open');
   }
+
+  // show home page on load
+  showPage('home');
 </script>
 
 </body>
