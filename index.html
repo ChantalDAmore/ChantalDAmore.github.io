@@ -27,19 +27,20 @@
       line-height: 1.7;
     }
 
-        nav {
+    nav {
       background: var(--nav-bg);
       border-bottom: 1px solid var(--border);
       position: sticky; top: 0; z-index: 100;
     }
     .nav-inner {
-      max-width: 100%;
+      max-width: 80%;
       margin: 0 auto;
       padding: 0 2.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
       height: 56px;
+      gap: 0;
     }
     .nav-brand {
       font-weight: 700;
@@ -47,18 +48,18 @@
       color: var(--accent);
       text-decoration: none;
       cursor: pointer;
+      margin-right: 1.5rem;
     }
     .nav-links {
       display: flex;
       gap: 0.4rem;
       list-style: none;
-      border: 1.5px solid var(--border);
-      border-radius: 8px;
-      padding: 0.3rem;
-      background: var(--bg);
+      padding: 0;
+      background: none;
+      border: none;
     }
     .nav-links li {
-      border: 1px solid var(--border);
+      border: 1px solid transparent;
       border-radius: 6px;
     }
     .nav-links a {
@@ -71,16 +72,21 @@
       font-weight: 700;
       transition: background 0.15s, color 0.15s;
     }
-    .nav-links a:hover,
-    .nav-links a.active {
+    .nav-links a:hover {
       background: var(--accent2);
       color: var(--accent);
     }
+    .nav-links a.active {
+      background: var(--accent2);
+      color: var(--accent);
+      border: 1px solid var(--border);
+      border-radius: 6px;
     }
     .nav-icons {
       display: flex;
       gap: 0.6rem;
       align-items: center;
+      margin-left: auto;
     }
     .nav-icons a {
       color: var(--muted);
@@ -305,7 +311,7 @@
     </div>
 
     <div class="timeline-item">
-      <span class="timeline-year">Nov 2023 – Apr 2025</span>
+      <span class="timeline-year">Nov 2023 – <br>Apr 2025</span>
       <div class="timeline-content">
         <strong>Postdoctoral Researcher in Social Psychology</strong>
         <span>University of Groningen, Faculty of Behavioral and Social Sciences</span>
@@ -314,7 +320,7 @@
     </div>
 
     <div class="timeline-item">
-      <span class="timeline-year">Sept – Dec 2022</span>
+      <span class="timeline-year">Sept 2022 – <br>Dec 2022</span>
       <div class="timeline-content">
         <strong>Visiting PhD Researcher</strong>
         <span>University of Queensland, Brisbane, Australia — School of Psychology</span>
@@ -323,7 +329,7 @@
     </div>
 
     <div class="timeline-item">
-      <span class="timeline-year">Oct 2019 – Dec 2023</span>
+      <span class="timeline-year">Oct 2019 – <br>Dec 2023</span>
       <div class="timeline-content">
         <strong>PhD Researcher in Social and Political Psychology <em>(Cum Laude)</em></strong>
         <span>University of Groningen, Faculty of Behavioral and Social Sciences</span>
