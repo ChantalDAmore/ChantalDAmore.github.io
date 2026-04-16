@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chantal D'Amore</title>
+  <style>
+    :root {
+      --accent:   #6a7fc1;
+      --accent2:  #b5c8e8;
+      --bg:       #f9f9fb;
+      --text:     #2c2c2c;
+      --muted:    #666;
+      --border:   #dde3f0;
+      --nav-bg:   #ffffff;
+      --card-bg:  #ffffff;
+      --max-w:    820px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--nav-bg);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .nav-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+    .nav-brand {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--accent);
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .nav-links {
+      display: flex;
+      gap: 0.25rem;
+      list-style: none;
+    }
+    .nav-links a {
+      padding: 0.35rem 0.75rem;
+      border-radius: 6px;
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 0.93rem;
+      transition: background 0.15s, color 0.15s;
+    }
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: var(--accent2);
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .nav-icons {
+      display: flex;
+      gap: 0.6rem;
+      align-items: center;
+    }
+    .nav-icons a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: color 0.15s;
+    }
+    .nav-icons a:hover { color: var(--accent); }
+
+    /* ── PAGES ── */
+    .page { display: none; }
+    .page.active { display: block; }
+
+    /* ── MAIN WRAPPER ── */
+    main {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+
+    /* ── HOME ── */
+    .home-hero {
+      display: flex;
+      gap: 2.5rem;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+    .home-photo {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--accent2);
+      background: var(--accent2);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      color: var(--accent);
+    }
+    .home-intro h1 {
+      font-size: 1.9rem;
+      color: var(--accent);
+      margin-bottom: 0.3rem;
+    }
+    .home-intro .role {
+      color: var(--muted);
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+    .home-intro p { margin-bottom: 0.8rem; }
+    .contact-line {
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+    .contact-line a { color: var(--accent); text-decoration: none; }
+    .contact-line a:hover { text-decoration: underline; }
+
+    /* ── SECTION HEADINGS ── */
+    h1 { font-size: 1.7rem; color: var(--accent); margin-bottom: 1.5rem; }
+    h2 { font-size: 1.2rem; color: var(--accent); margin: 2rem 0 0.75rem; border-bottom: 2px solid var(--accent2); padding-bottom: 0.3rem; }
+    h3 { font-size: 1.05rem; color: var(--text); margin-bottom: 0.4rem; }
+
+    /* ── CARDS ── */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1.2rem;
+    }
+    .card h3 { color: var(--accent); }
+    .card .meta {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+    .card p { font-size: 0.95rem; }
+    .tag {
+      display: inline-block;
+      background: var(--accent2);
+      color: var(--accent);
+      font-size: 0.78rem;
+      padding: 0.15rem 0.6rem;
+      border-radius: 20px;
+      margin-right: 0.3rem;
+      margin-top: 0.5rem;
+      font-weight: 600;
+    }
+
+    /* ── ABOUT ── */
+    .timeline-item {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      align-items: flex-start;
+    }
+    .timeline-year {
+      min-width: 100px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      padding-top: 0.15rem;
+    }
+    .timeline-content strong { display: block; }
+    .timeline-content span { font-size: 0.9rem; color: var(--muted); }
+
+    /* ── PUBLICATIONS ── */
+    .pub-item {
+      border-left: 3px solid var(--accent2);
+      padding: 0.6rem 0 0.6rem 1rem;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+    .pub-item a { color: var(--accent); text-decoration: none; }
+    .pub-item a:hover { text-decoration: underline; }
+    .pub-item .journal { color: var(--muted); font-style: italic; }
+
+    /* ── CODE ── */
+    .code-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1.2rem;
+    }
+    .code-card h3 { color: var(--accent); margin-bottom: 0.4rem; }
+    .code-card p { font-size: 0.95rem; margin-bottom: 0.6rem; }
+    .code-card a {
+      font-size: 0.88rem;
+      color: var(--accent);
+      text-decoration: none;
+      border: 1px solid var(--accent2);
+      padding: 0.2rem 0.6rem;
+      border-radius: 5px;
+      margin-right: 0.4rem;
+      display: inline-block;
+      margin-top: 0.3rem;
+    }
+    .code-card a:hover { background: var(--accent2); }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--muted);
+      padding: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════ NAV ══════════════ -->
+<nav>
+  <div class="nav-inner">
+    <span class="nav-brand" onclick="showPage('home')">Chantal D'Amore</span>
+    <ul class="nav-links">
+      <li><a href="#" onclick="showPage('about')"   id="nav-about">About me</a></li>
+      <li><a href="#" onclick="showPage('research')" id="nav-research">Research</a></li>
+      <li><a href="#" onclick="showPage('publications')" id="nav-publications">Publications</a></li>
+      <li><a href="#" onclick="showPage('code')"    id="nav-code">Code</a></li>
+    </ul>
+    <div class="nav-icons">
+      <!-- Replace # with your actual profile URLs -->
+      <a href="#" title="LinkedIn" target="_blank">in</a>
+      <a href="https://github.com/ChantalDAmore" title="GitHub" target="_blank">gh</a>
+      <a href="#" title="Google Scholar" target="_blank">gs</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════ HOME ══════════════ -->
+<div id="page-home" class="page active">
+  <main>
+    <div class="home-hero">
+      <!-- Replace the emoji div with an <img> tag once you have a photo:
+           <img src="img/photo.jpg" class="home-photo" alt="Chantal D'Amore"> -->
+      <div class="home-photo">👩‍🔬</div>
+      <div class="home-intro">
+        <h1>Hi! I'm Chantal</h1>
+        <p class="role">Postdoctoral Researcher in Social Psychology</p>
+        <p>
+          I am a postdoctoral researcher in Social Psychology at [Your Institution].
+          My work focuses on [your main research themes — e.g., social influence,
+          group dynamics, attitude change, intergroup relations].
+        </p>
+        <p>
+          I use [your methods — e.g., experimental methods, surveys, computational approaches]
+          to study [brief description of your research questions].
+        </p>
+        <p>
+          Here you can find more about my
+          <a href="#" onclick="showPage('research')" style="color:var(--accent)">research</a>,
+          <a href="#" onclick="showPage('publications')" style="color:var(--accent)">publications</a>,
+          and <a href="#" onclick="showPage('code')" style="color:var(--accent)">code</a>.
+        </p>
+        <p class="contact-line">✉️ <a href="mailto:c.damore@institution.nl">c.damore@institution.nl</a></p>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- ══════════════ ABOUT ══════════════ -->
+<div id="page-about" class="page">
+  <main>
+    <h1>Chantal D'Amore</h1>
+
+    <h2>Positions</h2>
+    <div class="timeline-item">
+      <span class="timeline-year">2024–present</span>
+      <div class="timeline-content">
+        <strong>Postdoctoral Researcher</strong>
+        <span>[Department / Group], [Institution], [Country]</span>
+      </div>
+    </div>
+
+    <h2>Education</h2>
+    <div class="timeline-item">
+      <span class="timeline-year">20XX–20XX</span>
+      <div class="timeline-content">
+        <strong>PhD in Social Psychology</strong>
+        <span>[University], [Country]</span>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-year">20XX–20XX</span>
+      <div class="timeline-content">
+        <strong>Master of Science in [Programme]</strong>
+        <span>[University], [Country]</span>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-year">20XX–20XX</span>
+      <div class="timeline-content">
+        <strong>Bachelor of Science in [Programme]</strong>
+        <span>[University], [Country]</span>
+      </div>
+    </div>
+
+    <h2>Teaching</h2>
+    <p>
+      [Describe courses you have taught or assisted in. E.g.: "I have taught
+      [Course Name] at [Institution] and supervised bachelor/master theses on
+      topics related to [topic]."]
+    </p>
+
+    <h2>Research visits & other experience</h2>
+    <p>
+      [Any visiting positions, internships, or other relevant experience.]
+    </p>
+
+    <h2>CV</h2>
+    <p><a href="doc/cv.pdf" style="color:var(--accent)">Download CV (PDF)</a></p>
+  </main>
+</div>
+
+<!-- ══════════════ RESEARCH ══════════════ -->
+<div id="page-research" class="page">
+  <main>
+    <h1>Research themes &amp; projects</h1>
+
+    <h2>Current projects</h2>
+
+    <div class="card">
+      <h3>Project title 1</h3>
+      <p class="meta">In collaboration with [Collaborator] | Funded by [Funder]</p>
+      <p>
+        Brief description of the project. What is the research question?
+        What methods do you use? What are the expected contributions?
+      </p>
+      <span class="tag">Experimental</span>
+      <span class="tag">Social influence</span>
+    </div>
+
+    <div class="card">
+      <h3>Project title 2</h3>
+      <p class="meta">In collaboration with [Collaborator] | Funded by [Funder]</p>
+      <p>
+        Brief description of the second project. Replace with your own work.
+      </p>
+      <span class="tag">Intergroup relations</span>
+      <span class="tag">Survey</span>
+    </div>
+
+    <h2>Research interests</h2>
+
+    <div class="card">
+      <h3>Social influence &amp; attitude change</h3>
+      <p>
+        Description of your interest in this area. What questions motivate you?
+        What have you contributed so far?
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Group dynamics</h3>
+      <p>
+        Description of your interest in group processes, conformity, norms, etc.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>[Third research interest]</h3>
+      <p>
+        Add as many interest cards as you like.
+      </p>
+    </div>
+
+  </main>
+</div>
+
+<!-- ══════════════ PUBLICATIONS ══════════════ -->
+<div id="page-publications" class="page">
+  <main>
+    <h1>Publications</h1>
+
+    <h2>Peer-reviewed publications</h2>
+
+    <div class="pub-item">
+      <strong>D'Amore, C.</strong>, [Co-author] &amp; [Co-author] (20XX).
+      <a href="#">Title of your paper</a>.
+      <span class="journal">Journal Name, Vol(Issue), pages.</span>
+    </div>
+
+    <div class="pub-item">
+      <strong>D'Amore, C.</strong> &amp; [Co-author] (20XX).
+      <a href="#">Title of another paper</a>.
+      <span class="journal">Journal Name, Vol(Issue), pages.</span>
+    </div>
+
+    <h2>Preprints</h2>
+
+    <div class="pub-item">
+      <strong>D'Amore, C.</strong> &amp; [Co-author] (20XX).
+      <a href="#">Title of preprint</a>. <span class="journal">PsyArXiv / OSF.</span>
+    </div>
+
+    <h2>Book chapters</h2>
+
+    <div class="pub-item">
+      <strong>D'Amore, C.</strong> (20XX).
+      <a href="#">Chapter title</a>. In [Editor(s)] (Eds.),
+      <span class="journal">Book Title</span>. Publisher.
+    </div>
+
+    <h2>Talks</h2>
+
+    <h3 style="margin-top:1rem; color:var(--muted); font-size:0.95rem;">Invited talks</h3>
+    <div class="pub-item">
+      [Talk title]. Presented at [Venue], [City], [Year].
+    </div>
+
+    <h3 style="margin-top:1rem; color:var(--muted); font-size:0.95rem;">Conference presentations</h3>
+    <div class="pub-item">
+      [Talk title] @ [Conference name] (Year, City).
+    </div>
+
+  </main>
+</div>
+
+<!-- ══════════════ CODE ══════════════ -->
+<div id="page-code" class="page">
+  <main>
+    <h1>Code &amp; materials</h1>
+
+    <div class="code-card">
+      <h3>Project / script name</h3>
+      <p>
+        Brief description of what this code does and which paper or project it belongs to.
+        What can someone reproduce with it?
+      </p>
+      <a href="#">GitHub</a>
+      <a href="#">Paper</a>
+      <a href="#">OSF</a>
+    </div>
+
+    <div class="code-card">
+      <h3>Another project</h3>
+      <p>
+        Description of another code repository, dataset, or analysis script.
+      </p>
+      <a href="#">GitHub</a>
+      <a href="#">Paper</a>
+    </div>
+
+    <div class="code-card">
+      <h3>Open materials / data</h3>
+      <p>
+        If you share open data or pre-registration materials, link them here.
+      </p>
+      <a href="#">OSF</a>
+    </div>
+
+  </main>
+</div>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer>
+  Chantal D'Amore &nbsp;|&nbsp; Last updated April 2026
+</footer>
+
+<!-- ══════════════ JS ══════════════ -->
+<script>
+  const pages = ['home','about','research','publications','code'];
+
+  function showPage(id) {
+    pages.forEach(p => {
+      document.getElementById('page-' + p).classList.remove('active');
+      const navEl = document.getElementById('nav-' + p);
+      if (navEl) navEl.classList.remove('active');
+    });
+    document.getElementById('page-' + id).classList.add('active');
+    const navEl = document.getElementById('nav-' + id);
+    if (navEl) navEl.classList.add('active');
+    window.scrollTo(0, 0);
+  }
+</script>
+
+</body>
+</html>
