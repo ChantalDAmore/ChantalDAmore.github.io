@@ -99,6 +99,67 @@
     }
     .nav-icons a:hover { color: var(--accent); }
     .nav-icons a:hover { color: var(--accent); }
+    /* MOBILE */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 0.3rem;
+      background: none;
+      border: none;
+    }
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--muted);
+      border-radius: 2px;
+      transition: background 0.15s;
+    }
+    .hamburger:hover span { background: var(--accent); }
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: var(--nav-bg);
+      border-top: 1px solid var(--border);
+      padding: 0.5rem 1.5rem 1rem;
+    }
+    .mobile-menu a {
+      padding: 0.6rem 0;
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 700;
+      border-bottom: 1px solid var(--border);
+    }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu a:hover,
+    .mobile-menu a.active { color: var(--accent); }
+    .mobile-menu .mobile-icons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 0.75rem;
+      padding-top: 0.5rem;
+    }
+    .mobile-menu .mobile-icons a {
+      font-size: 0.78rem;
+      font-weight: 400;
+      border-bottom: none;
+      padding: 0;
+    }
+    .mobile-menu.open { display: flex; }
+
+    @media (max-width: 650px) {
+      .nav-links, .nav-icons { display: none; }
+      .hamburger { display: flex; }
+      .nav-inner { max-width: 100%; padding: 0 1.2rem; }
+      main { padding: 1.5rem 1rem 3rem; }
+      .home-hero { flex-direction: column; align-items: center; text-align: center; }
+      .timeline-item { flex-direction: column; gap: 0.2rem; }
+      .timeline-year { min-width: unset; }
+    }
 
     .page { display: none; }
     .page.active { display: block; }
@@ -254,6 +315,11 @@
       <li><a href="#" onclick="showPage('publications')" id="nav-publications">Publications</a></li>
       <li><a href="#" onclick="showPage('data')"         id="nav-data">Data</a></li>
     </ul>
+        <button class="hamburger" onclick="toggleMobile()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <div class="nav-icons">
     <div class="nav-icons">
       <a href="http://linkedin.com/in/chantal-damore/" title="LinkedIn" target="_blank">LinkedIn</a>
       <a href="https://scholar.google.com/citations?user=F-BLCrQAAAAJ&h" title="Google Scholar" target="_blank">Scholar</a>
@@ -261,7 +327,22 @@
       <a href="http://researchgate.net/profile/Chantal-Damore" title="ResearchGate" target="_blank">ResearchGate</a>
     </div>
   </div>
+  </div><!-- end nav-inner -->
 </nav>
+
+<!-- MOBILE DROPDOWN MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#" onclick="showPage('about');   closeMobile()" id="mob-about">About me</a>
+  <a href="#" onclick="showPage('research');     closeMobile()" id="mob-research">Research</a>
+  <a href="#" onclick="showPage('publications'); closeMobile()" id="mob-publications">Publications</a>
+  <a href="#" onclick="showPage('data');         closeMobile()" id="mob-data">Data</a>
+  <div class="mobile-icons">
+    <a href="http://linkedin.com/in/chantal-damore/" target="_blank">LinkedIn</a>
+    <a href="https://scholar.google.com/scholar?q=Chantal+D%27Amore+social+psychology" target="_blank">Scholar</a>
+    <a href="http://orcid.org/0000-0002-7151-3888" target="_blank">ORCID</a>
+    <a href="http://researchgate.net/profile/Chantal-Damore" target="_blank">ResearchGate</a>
+  </div>
+</div>
 
 <!-- HOME -->
 <div id="page-home" class="page active">
@@ -563,6 +644,19 @@
       const navEl = document.getElementById('nav-' + p);
       if (navEl) navEl.classList.remove('active');
     });
+      function toggleMobile() {
+    document.getElementById('mobile-menu').classList.toggle('open');
+  }
+
+  function closeMobile() {
+    document.getElementById('mobile-menu').classList.remove('open');
+    // sync active state in mobile menu
+    const pages = ['about','research','publications','data'];
+    pages.forEach(p => {
+      const el = document.getElementById('mob-' + p);
+      if (el) el.classList.remove('active');
+    });
+  }
     document.getElementById('page-' + id).classList.add('active');
     const navEl = document.getElementById('nav-' + id);
     if (navEl) navEl.classList.add('active');
