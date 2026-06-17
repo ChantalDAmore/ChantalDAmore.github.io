@@ -6,13 +6,13 @@
   <title>Chantal D'Amore</title>
   <style>
     :root {
-      --accent:   #6a7fc1;
-      --accent2:  #b5c8e8;
-      --bg:       #f9f9fb;
-      --text:     #2c2c2c;
-      --muted:    #666;
-      --border:   #dde3f0;
-      --nav-bg:   #ffffff;
+      --accent:   #2d3748;
+      --accent2:  #f4f4f5;
+      --bg:       #ffffff;
+      --text:     #1a202c;
+      --muted:    #718096;
+      --border:   #e2e8f0;
+      --nav-bg:   #2d3748;
       --card-bg:  #ffffff;
       --max-w:    820px;
     }
@@ -45,7 +45,7 @@
     .nav-brand {
       font-weight: 700;
       font-size: 1.05rem;
-      color: var(--accent);
+      color: #ffffff;
       text-decoration: none;
       cursor: pointer;
       margin-right: 1.5rem;
@@ -67,19 +67,19 @@
       padding: 0.3rem 0.9rem;
       border-radius: 6px;
       text-decoration: none;
-      color: var(--muted);
+      color: rgba(255,255,255,0.8);
       font-size: 0.93rem;
       font-weight: 700;
       transition: background 0.15s, color 0.15s;
     }
     .nav-links a:hover {
-      background: var(--accent2);
-      color: var(--accent);
+      background: rgba(255,255,255,0.15);
+      color: #ffffff;
     }
     .nav-links a.active {
-      background: var(--accent2);
-      color: var(--accent);
-      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.2);
+      color: #ffffff;
+      border: 1px solid rgba(255,255,255,0.3);
       border-radius: 6px;
     }
     .nav-icons {
@@ -89,7 +89,7 @@
       margin-left: auto;
     }
     .nav-icons a {
-      color: var(--muted);
+      color: rgba(255,255,255,0.7);
       text-decoration: none;
       font-size: 0.75rem;
       font-weight: 400;
@@ -97,8 +97,8 @@
       padding: 0.2rem 0.4rem;
       border-radius: 4px;
     }
-    .nav-icons a:hover { color: var(--accent); }
-    .nav-icons a:hover { color: var(--accent); }
+    .nav-icons a:hover { color: #ffffff; }
+
     /* MOBILE */
     .hamburger {
       display: none;
@@ -113,30 +113,30 @@
       display: block;
       width: 22px;
       height: 2px;
-      background: var(--muted);
+      background: rgba(255,255,255,0.8);
       border-radius: 2px;
       transition: background 0.15s;
     }
-    .hamburger:hover span { background: var(--accent); }
+    .hamburger:hover span { background: #ffffff; }
 
     .mobile-menu {
       display: none;
       flex-direction: column;
       background: var(--nav-bg);
-      border-top: 1px solid var(--border);
+      border-top: 1px solid rgba(255,255,255,0.15);
       padding: 0.5rem 1.5rem 1rem;
     }
     .mobile-menu a {
       padding: 0.6rem 0;
       text-decoration: none;
-      color: var(--muted);
+      color: rgba(255,255,255,0.8);
       font-size: 0.95rem;
       font-weight: 700;
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid rgba(255,255,255,0.15);
     }
     .mobile-menu a:last-child { border-bottom: none; }
     .mobile-menu a:hover,
-    .mobile-menu a.active { color: var(--accent); }
+    .mobile-menu a.active { color: #ffffff; }
     .mobile-menu .mobile-icons {
       display: flex;
       gap: 1rem;
@@ -469,68 +469,6 @@
     <p style="color:var(--muted); font-size:0.97rem; margin-top:0.5rem;">
       This page is currently under construction. Please check back soon!
     </p>
-
-    <!--
-    <h2>Current projects</h2>
-      <div class="card">
-      <h3>The social-emotional dynamics of normative decline</h3>
-      <p class="meta">University of Amsterdam | Project leader: Prof. dr. Gerben van Kleef</p>
-      <p>
-        This project investigates how group-level social and emotional processes unfold
-        when norms erode within groups and societies. Using experimental and social
-        interaction designs, it aims to understand when and how normative decline
-        triggers collective responses.
-      </p>
-      <span class="tag">Experimental</span>
-      <span class="tag">Group dynamics</span>
-      <span class="tag">Norms</span>
-    </div>
-
-    <div class="card">
-      <h3>Psycho-social consequences of the Groningen Gas Extraction</h3>
-      <p class="meta">University of Groningen | Project leaders: Prof. dr. Michel Dückers & Dr. Annette Scherpenzeel</p>
-      <p>
-        A large-scale applied research project examining the psychological and social
-        consequences for residents affected by gas extraction-related earthquakes in
-        Groningen, the Netherlands. Uses large-scale longitudinal nested data and
-        quantitative methods.
-      </p>
-      <span class="tag">Longitudinal</span>
-      <span class="tag">Applied research</span>
-      <span class="tag">Community</span>
-    </div>
-
-    <h2>Research interests</h2>
-
-    <div class="card">
-      <h3>Polarization &amp; moralization</h3>
-      <p>
-        How do political disagreements escalate into moral conflicts? My PhD research
-        developed and tested a framework — the Polarization Triangle — examining the
-        interplay between perceived polarization, attitude moralization, and democratic
-        consequences. I used longitudinal surveys, experiments, and systematic literature reviews.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>Intergroup conflict &amp; value protection</h3>
-      <p>
-        Together with collaborators, I developed the Intergroup Value Protection Model
-        (IVPM), a theoretically integrative framework of intergroup conflict escalation
-        in democratic societies. This work bridges social psychology and political psychology.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>Group dynamics &amp; social interaction</h3>
-      <p>
-        I study how group-level emotions and norms shape individual attitudes and behavior
-        through social interaction. This includes dynamic group interaction research and
-        multi-level modelling of contextual (normative) effects.
-      </p>
-    </div>
-    -->
-
   </main>
 </div>
 
@@ -661,7 +599,6 @@
   const pages = ['home', 'about', 'research', 'publications', 'data'];
 
   function showPage(id) {
-    // hide all pages
     pages.forEach(function(p) {
       var pageEl = document.getElementById('page-' + p);
       if (pageEl) pageEl.style.display = 'none';
@@ -669,15 +606,12 @@
       if (navEl) navEl.classList.remove('active');
     });
 
-    // show the chosen page
     var target = document.getElementById('page-' + id);
     if (target) target.style.display = 'block';
 
-    // mark nav link as active
     var navTarget = document.getElementById('nav-' + id);
     if (navTarget) navTarget.classList.add('active');
 
-    // close mobile menu and scroll to top
     closeMobile();
     window.scrollTo(0, 0);
   }
@@ -691,7 +625,6 @@
     if (menu) menu.classList.remove('open');
   }
 
-  // show home page on load
   showPage('home');
 </script>
 
