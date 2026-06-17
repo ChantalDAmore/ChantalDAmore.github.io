@@ -284,9 +284,23 @@
 
     /* PUBLICATIONS */
     .pub-item {
-      border-left: 3px solid var(--accent2);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+      margin-bottom: 1rem;
       padding: 0.6rem 0 0.6rem 1rem;
       margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+    .pub-logo {
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
+      flex-shrink: 0;
+      margin-top: 0.2rem;
+    }
+    .pub-text {
+      flex: 1;
       font-size: 0.95rem;
     }
     .pub-item a { color: var(--accent); text-decoration: none; }
@@ -533,40 +547,64 @@
 
     <h2>Peer-reviewed science publications</h2>
 
-    <div class="pub-item">
-      <strong>D'Amore, C.</strong>, Koudenburg, N., &amp; van Zomeren, M. (2026).
-      <a href="https://doi.org/10.1177/13684302261440348" target="_blank">The social roots of moralization: Group-level emotions and attitudes drive individual moralization via social interaction.</a>
-      <span class="journal">Group Processes and Intergroup Relations (Online First).</span>
-      <em style="font-size:0.85rem; color:var(--muted)"> — Open access, open data</em>
-    </div>
+<div class="pub-item">
+  <img src="logo-gpir.jpeg" alt="Group Processes and Intergroup Relations logo" class="pub-logo">
+  <div class="pub-text">
+    <strong>D'Amore, C.</strong>, Koudenburg, N., &amp; van Zomeren, M. (2026).
+    <a href="https://doi.org/10.1177/13684302261440348" target="_blank">
+      The social roots of moralization: Group-level emotions and attitudes drive individual moralization via social interaction.
+    </a>
+    <span class="journal">Group Processes and Intergroup Relations (Online First).</span>
+    <em style="font-size:0.85rem; color:var(--muted)"> — Open access, open data</em>
+  </div>
+</div>
 
-    <div class="pub-item">
-      Dono, M., <strong>D'Amore, C.</strong>, Alzate, M., Brambilla, M., van Zomeren, M., &amp; Sabucedo, J. M. (2026).
-      <a href="https://doi.org/10.1007/s12144-025-08555-8" target="_blank">Examining psychological effects of demagogic discourse on perceived threat and political intolerance.</a>
-      <span class="journal">Current Psychology, 45(3), Article 237.</span>
-      <em style="font-size:0.85rem; color:var(--muted)"> — Open access</em>
-    </div>
+<div class="pub-item">
+  <img src="logo-cp.jpeg" alt="Current Psychology logo" class="pub-logo">
+  <div class="pub-text">
+    Dono, M., <strong>D'Amore, C.</strong>, Alzate, M., Brambilla, M., van Zomeren, M., &amp; Sabucedo, J. M. (2026).
+    <a href="https://doi.org/10.1007/s12144-025-08555-8" target="_blank">
+      Examining psychological effects of demagogic discourse on perceived threat and political intolerance.
+    </a>
+    <span class="journal">Current Psychology, 45(3), Article 237.</span>
+    <em style="font-size:0.85rem; color:var(--muted)"> — Open access</em>
+  </div>
+</div>
 
-    <div class="pub-item">
-      <strong>D'Amore, C.</strong>, van Zomeren, M., &amp; Koudenburg, N. (2024).
-      <a href="http://doi.org/10.1037/pspi0000454" target="_blank">How perceived polarization predicts attitude moralization (and vice versa): A four-wave longitudinal multilevel examination in the 2020 US election context.</a>
-      <span class="journal">Journal of Personality and Social Psychology, 126(4), 624–642.</span>
-      <em style="font-size:0.85rem; color:var(--muted)"> — Open data</em>
-    </div>
+<div class="pub-item">
+  <img src="logo-jpsp.jpeg" alt="Journal of Personality and Social Psychology logo" class="pub-logo">
+  <div class="pub-text">
+    <strong>D'Amore, C.</strong>, van Zomeren, M., &amp; Koudenburg, N. (2024).
+    <a href="http://doi.org/10.1037/pspi0000454" target="_blank">
+      How perceived polarization predicts attitude moralization (and vice versa): A four-wave longitudinal multilevel examination in the 2020 US election context.
+    </a>
+    <span class="journal">Journal of Personality and Social Psychology, 126(4), 624–642.</span>
+    <em style="font-size:0.85rem; color:var(--muted)"> — Open data</em>
+  </div>
+</div>
 
-    <div class="pub-item">
-      Van Zomeren, M., <strong>D'Amore, C.</strong>, Pauls, I. L., Shuman, E., &amp; Leal, A. L. (2024).
-      <a href="https://doi.org/10.1177/10888683231192120" target="_blank">The Intergroup Value Protection Model: A theoretically integrative and dynamic approach to intergroup conflict escalation in democratic societies.</a>
-      <span class="journal">Personality and Social Psychology Review, 28(2), 225–248.</span>
-    </div>
+<div class="pub-item">
+  <img src="logo-pspr.jpeg" alt="Personality and Social Psychology Review logo" class="pub-logo">
+  <div class="pub-text">
+    Van Zomeren, M., <strong>D'Amore, C.</strong>, Pauls, I. L., Shuman, E., &amp; Leal, A. L. (2024).
+    <a href="https://doi.org/10.1177/10888683231192120" target="_blank">
+      The Intergroup Value Protection Model: A theoretically integrative and dynamic approach to intergroup conflict escalation in democratic societies.
+    </a>
+    <span class="journal">Personality and Social Psychology Review, 28(2), 225–248.</span>
+  </div>
+</div>
 
-    <div class="pub-item">
-      <strong>D'Amore, C.</strong>, Van Zomeren, M., &amp; Koudenburg, N. (2022).
-      <a href="https://doi.org/10.1177/01461672211047375" target="_blank">Attitude moralization within polarized contexts: An emotional value-protective response to dyadic harm cues.</a>
-      <span class="journal">Personality and Social Psychology Bulletin, 48(11), 1566–1579.</span>
-      <em style="font-size:0.85rem; color:var(--muted)"> — Open access, open data</em>
-    </div>
-
+<div class="pub-item">
+  <img src="logo-pspb.jpeg" alt="Personality and Social Psychology Bulletin logo" class="pub-logo">
+  <div class="pub-text">
+    <strong>D'Amore, C.</strong>, Van Zomeren, M., &amp; Koudenburg, N. (2022).
+    <a href="https://doi.org/10.1177/01461672211047375" target="_blank">
+      Attitude moralization within polarized contexts: An emotional value-protective response to dyadic harm cues.
+    </a>
+    <span class="journal">Personality and Social Psychology Bulletin, 48(11), 1566–1579.</span>
+    <em style="font-size:0.85rem; color:var(--muted)"> — Open access, open data</em>
+  </div>
+</div>
 
     <h2>Talks</h2>
     <div class="talks-list">
