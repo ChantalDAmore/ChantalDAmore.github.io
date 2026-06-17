@@ -4,16 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Chantal D'Amore</title>
-  <style>:
-    root {
-  --bg: #ffffff;
-  --nav-bg: #2d3748;       /* dark charcoal-navy for the top bar */
-  --accent: #ffffff;        /* white — for nav link text */
-  --accent2: #f7f7f7;       /* very light grey for highlights/borders */
-  --border: #e2e8f0;
-  --text: #1a202c;          /* near-black for body text */
-  --muted: #718096;         /* medium grey for secondary text */
+  <style>
+    :root {
+      --accent:   #6a7fc1;
+      --accent2:  #b5c8e8;
+      --bg:       #f9f9fb;
+      --text:     #2c2c2c;
+      --muted:    #666;
+      --border:   #dde3f0;
+      --nav-bg:   #ffffff;
+      --card-bg:  #ffffff;
+      --max-w:    820px;
     }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
@@ -59,43 +62,43 @@
       border: 1px solid transparent;
       border-radius: 6px;
     }
-   .nav-links a {
-  display: block;
-  padding: 0.3rem 0.9rem;
-  border-radius: 6px;
-  text-decoration: none;
-  color: rgba(255,255,255,0.8);
-  font-size: 0.93rem;
-  font-weight: 700;
-  transition: background 0.15s, color 0.15s;
-}
-.nav-links a:hover {
-  background: rgba(255,255,255,0.15);
-  color: #ffffff;
-}
-.nav-links a.active {
-  background: rgba(255,255,255,0.2);
-  color: #ffffff;
-  border: 1px solid rgba(255,255,255,0.3);
-  border-radius: 6px;
-}
+    .nav-links a {
+      display: block;
+      padding: 0.3rem 0.9rem;
+      border-radius: 6px;
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 0.93rem;
+      font-weight: 700;
+      transition: background 0.15s, color 0.15s;
+    }
+    .nav-links a:hover {
+      background: var(--accent2);
+      color: var(--accent);
+    }
+    .nav-links a.active {
+      background: var(--accent2);
+      color: var(--accent);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+    }
     .nav-icons {
-  display: flex;
-  gap: 0.6rem;
-  align-items: center;
-  margin-left: auto;
-}
-.nav-icons a {
-  color: rgba(255,255,255,0.7);
-  text-decoration: none;
-  font-size: 0.75rem;
-  font-weight: 400;
-  transition: color 0.15s;
-  padding: 0.2rem 0.4rem;
-  border-radius: 4px;
-}
-.nav-icons a:hover { color: #ffffff; }
-    
+      display: flex;
+      gap: 0.6rem;
+      align-items: center;
+      margin-left: auto;
+    }
+    .nav-icons a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.75rem;
+      font-weight: 400;
+      transition: color 0.15s;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+    }
+    .nav-icons a:hover { color: var(--accent); }
+    .nav-icons a:hover { color: var(--accent); }
     /* MOBILE */
     .hamburger {
       display: none;
@@ -259,7 +262,7 @@
 
     /* PUBLICATIONS */
     .pub-item {
-       border-left: 3px solid #2d3748;   /* matches the nav color */
+      border-left: 3px solid var(--accent2);
       padding: 0.6rem 0 0.6rem 1rem;
       margin-bottom: 1rem;
       font-size: 0.95rem;
